@@ -1,0 +1,59 @@
+{
+  "name": "fluxo de trabalho do Hacker News",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "70cafa1a-a6df-4c28-98e9-03fd1e338d79",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "resource": "all",
+        "limit": 10,
+        "additionalFields": {
+          "keyword": "automation"
+        }
+      },
+      "type": "n8n-nodes-base.hackerNews",
+      "typeVersion": 1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "e6c97f25-1b94-4c61-94b9-37b5dca7e52b",
+      "name": "Hacker News",
+      "notesInFlow": true,
+      "notes": "Obtenha os 10 artigos mais recentes."
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Hacker News",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "b74652c4-bb7a-4c8d-86b2-8497b8c3f993",
+  "meta": {
+    "instanceId": "632a0f85e373061c2826b23d542dacd832db90da3deac84a1df7c50d8daf2d70"
+  },
+  "id": "gZwr3LvKmJwmNiX0",
+  "tags": []
+}
